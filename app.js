@@ -1,5 +1,5 @@
 const express = require('express');
-const port=process.env.PORT || 5000; // this is the default port
+const port = process.env.PORT || 5000; // this is the default port
 
 const app = express(); //this is our app or instance of express
 
@@ -7,6 +7,7 @@ const app = express(); //this is our app or instance of express
 app.use(express.json());
 app.use(express.urlencoded());
 
+app.use(express.static('public'));
 
 //API ROUTES
 
@@ -16,7 +17,7 @@ app.get('/form', (req, res) => {
 })
 
 app.post('/formPost', (req, res) => {
-    console.log(req.body);  // the data we get is in the body of request.
+    console.log(req.body); // the data we get is in the body of request.
 
 })
 
